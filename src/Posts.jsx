@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Posts.css'
-import he from 'he';
 import htmlReactParser from 'html-react-parser';
 
 function Posts() {
