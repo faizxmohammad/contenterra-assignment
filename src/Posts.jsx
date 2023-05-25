@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Posts.css'
 import he from 'he';
+import htmlReactParser from 'html-react-parser';
 
 function Posts() {
     const [myData, setmyData] = useState([]);
@@ -27,7 +28,8 @@ function Posts() {
                 {
                    myData.map((item, id) => {
                     // Decode the selftext_html
-                    const decodedSelfText = item.data.selftext_html ? he.decode(item.data.selftext_html) : '';
+                    // const decodedSelfText = item.data.selftext_html ? he.decode(item.data.selftext_html) : '';
+                    const decodedSelfText = item.data.selftext_html ? htmlReactParser(item.data.selftext_html) : '';
                   
                     return (
                       <div className="card" key={id}>
